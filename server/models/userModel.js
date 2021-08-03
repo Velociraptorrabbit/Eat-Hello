@@ -19,6 +19,7 @@ mongoose.connect(MONGO_URI, {
     console.log(err);
   });
 
+
 // eslint-disable-next-line prefer-destructuring
 const Schema = mongoose.Schema;
 
