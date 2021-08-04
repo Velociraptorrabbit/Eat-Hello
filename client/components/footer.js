@@ -15,9 +15,8 @@ const Footer = () => {
           
           <p>
             <FontAwesomeIcon icon={faCat} size='1x' /> 
-            Designed and build by the <br></br> New York #27 Velocirabbit Team
+              Designed and build by the <br></br> New York #27 Velocirabbit Team
           </p>
-          <br></br>
           <p>
           Code licensed MIT, docs CC BY 3.0.
           </p>

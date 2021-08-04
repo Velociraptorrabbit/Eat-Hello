@@ -66,10 +66,9 @@ const Popup = ({
   const authorContent = () => {
     return (
       <ul className='authors'>
-        <li>Adda Kridler</li>
-        <li>Annie Pan</li>
-        <li>Emeric David</li>
-        <li>Hazel Na</li>
+        <li>Jae Kim</li>
+        <li>Shawn Convery</li>
+        <li>Simon Yu</li>
         <li>Matilda Wang</li>
       </ul>
     );

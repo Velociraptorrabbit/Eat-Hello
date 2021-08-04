@@ -47,7 +47,7 @@
 .popUp {
   position: fixed;
 
-  //transform: translateX(100%);
+  // transform: translateX(100%);
   transition: 0.3s ease-out;
 }
 
@@ -56,7 +56,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-wrap: initial;
+  // overflow-wrap: initial;
+  overflow: hidden;
+  margin: auto;
 }
 
 .popUpBody img {
