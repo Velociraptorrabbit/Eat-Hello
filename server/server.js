@@ -5,10 +5,11 @@ const PORT = 3000;
 //const mongoose = require('mongoose');
 //const userController = require('./controllers/userController');
 //const cookieParser = require('cookie-parser');
-const cuisineRouter = require('./routes/cuisine');
+//const cuisineRouter = require('./routes/cuisine');
 const mapRouter = require('./routes/map');
 const mapController = require('./controllers/mapController');
 const restaurantRouter = require('./routes/restaurant');
+const userRouter = require('./routes/user');
 
 const cors = require('cors');
 app.use(cors());
@@ -18,15 +19,14 @@ app.use(express.json());
 
 app.use('/map', mapRouter);
 app.use('/restaurant', restaurantRouter);
-
-// a start point for the route
-app.use('/api', cuisineRouter);
+//app.use('/api', cuisineRouter);
+app.use('/login', userRouter);
 
 //if (process.env.NODE_ENV === 'production') {
-  app.use('/build', express.static(path.join(__dirname, '../build')));
-  app.get('/', (req, res) => {
-    return res.status(200).sendFile(path.join(__dirname, '../index.html'));
-  });
+app.use('/build', express.static(path.join(__dirname, '../build')));
+app.get('/', (req, res) => {
+  return res.status(200).sendFile(path.join(__dirname, '../index.html'));
+});
 //}
 // error handlers
 //app.use('*',(req, res) => res.status(404).sendFile(path.join(__dirname, '/client/404.html')));

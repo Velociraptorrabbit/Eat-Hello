@@ -15,7 +15,7 @@ const Footer = () => {
           
           <p>
             <FontAwesomeIcon icon={faCat} size='1x' /> 
-            Designed and build by the <br></br> New York #27 goblin shark team
+            Designed and build by the <br></br> New York #27 Velocirabbit Team
           </p>
           <br></br>
           <p>
@@ -35,7 +35,7 @@ const Footer = () => {
               <li><strong>CodeSmith</strong></li>
               <li>New York</li>
               <li>Immersive 27</li>
-              <li>Goblin Shark</li>
+              <li>Velocirabbit</li>
             </ul>
           </div>
           <div className='col2'>

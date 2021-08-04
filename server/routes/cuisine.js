@@ -9,7 +9,7 @@ const userController = require('../controllers/userController');
 /**
  * login
  */
-router.post('/login', userController.readParams, userController.getUser, userController.passwordCompare, (req, res) => {
+router.post('/login', userController.getUser, userController.passwordCompare, (req, res) => {
   return res.json({
     status: true,
     payload: {
@@ -21,7 +21,7 @@ router.post('/login', userController.readParams, userController.getUser, userCon
 /**
  * signup
  */
-router.post('/signup', userController.readParams, userController.addDataBaseEntry, userController.updatePizzaHistory, (req, res) => {
+router.post('/signup', userController.addDataBaseEntry, userController.updatePizzaHistory, (req, res) => {
   res.status(200).send();
 });
 

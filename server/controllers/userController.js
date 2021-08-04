@@ -4,40 +4,33 @@ const User = require('../models/userModel');
 const userController = {};
 
 
-userController.readParams = (req, res, next) => {
-  const { username, password } = req.body;
-  res.locals = { username, password };
-  //console.log('locals in readParams are un,pw', res.locals.username , res.locals.password);
-  return next();
-};
+// userController.readParams = (req, res, next) => {
+//   const { username, password } = req.body;
+//   res.locals = { username, password };
+//   //console.log('locals in readParams are un,pw', res.locals.username , res.locals.password);
+//   return next();
+// };
 
-userController.addDataBaseEntry = async (req, res, next) => {
-  //grab un and pw from locals 
-  const { username, password } = res.locals;
-  await User.create({ username, password }, (err, user) => {
-    //if err do something
-    if(err){
-      res.render('/', {error: err});
-    }
-    else {
-      //console.log('user: ', user);
-      // MongoDB ID
-      res.locals.id = user._id;
-      return next();
-    }
-  });
+userController.createUser = async (req, res, next) => {
+  try { 
+    const newUser = await User.create(req.body);
+    res.locals.id = newUser._id;
+    return next();
+  } catch(err) {
+    return res.send('User already exists');
+  }
 };
-/** ssid? */
 
 userController.getUser = async (req,res,next) =>{
-  const username = res.locals.username;
-  const result = await User.findOne({ username }, (err, username) => {
-    if (!username || err) {
+  const { username , password } = req.body;
+  const result = await User.findOne({ username }, (err, user) => {
+    if (!user || err) {
       console.log('user not found');
-      res.redirect('/api/signup');  
+      return res.send('Invalid Username or Password'); 
     }
   });
   console.log('result', result);
+  res.locals.password = password;
   res.locals.dbPassword = result.password;
   return next();
 };

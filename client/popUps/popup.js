@@ -1,6 +1,6 @@
 import { PromiseProvider } from 'mongoose';
 import React, { Component, Fragment, useEffect } from 'react';
-import goblinShark from '../Images/goboshark.png';
+import velociraptor from '../Images/velociraptor.jpeg';
 
 const Popup = ({
   popupState,
@@ -58,7 +58,7 @@ const Popup = ({
   const catContent = () => {
     return (
       <Fragment>
-        <img src={goblinShark} alt='goblin-shark' />
+        <img src={velociraptor} alt='velociraptor' />
       </Fragment>
     );
   };
