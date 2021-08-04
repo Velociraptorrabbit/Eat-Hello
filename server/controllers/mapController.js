@@ -43,6 +43,8 @@ mapController.sendRestaurant = async (res, req, next) => {
     const lng = res.body.lng;
     // console.log(`menu:`, menu, `lat:`, lat, `lng:`, lng);
     const restaurantUrl = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${menu}}&type=restaurant&location=${lat},${lng}&radius=2000&key=${apiKey}`;
+
+    
     const response = await axios.get(restaurantUrl);
     res.locals = { restaurants: response.data.results };
     return next();

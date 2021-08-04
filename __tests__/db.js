@@ -30,3 +30,29 @@ describe('insert', () => {
       expect(insertedUser).toEqual(mockUser);
     });
   });
+
+  describe('delete', () => {
+    let connection;
+    let db;
+  
+    beforeAll(async () => {
+      connection = await MongoClient.connect(MONGO_URI, {
+        useNewUrlParser: true,
+      });
+      db = await connection.db('eat-hello');
+    });
+  
+    afterAll(async () => {
+      await connection.close();
+      await db.close();
+    });
+  
+    it('should delete a doc from collection', async () => {
+      const users = db.collection('users');
+  
+      await users.findOneAndDelete({username: 'some-user'});
+  
+      const insertedUser = await users.findOne({username: 'some-user'});
+      expect(insertedUser).toEqual(null);
+    });
+  });

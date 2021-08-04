@@ -6,8 +6,6 @@ const express = require('express');
 
 // const app = express()
 
-
-
 // const app = require('../server/server').app;
 const server = 'http://localhost:3000'
 // beforeAll(done => {
@@ -35,3 +33,31 @@ describe('Route integration', () => {
 });
 
 
+describe('Route integration', () => {
+  describe('/map', () => {
+    describe('POST', () => {
+      it('responds with 200 status and JSON/application content type', () => {
+        return request(server)
+          .post('/map')
+          .send({ zipCode: 11206 })
+          .then((res) => {
+            console.log(res.body)
+            expect(res.body).toEqual(true);
+          })
+          .catch((err) => err);
+      });
+      it('respond with 200 status and JSON/application content type and correct lat long', () => {
+        return request(server)
+          .post('/map')
+          .send({ zipCode: 11206 })
+          .then((res) => {
+            expect(res.body).toEqual({ lat: 40.7047738, lng: -73.9418603 });
+          })
+          .catch((err) => err);
+      });
+      it('respond with 400 status on wrong Key value', () => {
+        return request(server).post('/map').send({ shawn: 'shawn' }).expect(400);
+      });
+    });
+  });
+});

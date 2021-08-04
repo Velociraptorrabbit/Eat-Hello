@@ -19,7 +19,10 @@
   "license": "ISC",
   "jest": {
     "globalSetup": "./jest-setup.js",
-    "globalTeardown": "./jest-teardown.js"
+    "globalTeardown": "./jest-teardown.js",
+    "moduleNameMapper": {
+      "\\.(jpg|svg|jpeg|png)$": "<rootDir>/jest-teardown.js"
+    }
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
@@ -30,10 +33,10 @@
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "ejs": "^2.6.1",
     "eslint-config-airbnb": "^18.2.1",
     "express": "^4.12.3",
     "geocoder": "^0.2.3",
-    "ejs": "^2.6.1",
     "mongoose": "^5.13.5",
     "prop-types": "^15.6.1",
     "react": "^17.0.2",
