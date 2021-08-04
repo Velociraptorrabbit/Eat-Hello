@@ -22,12 +22,12 @@ app.use('/restaurant', restaurantRouter);
 // a start point for the route
 app.use('/api', cuisineRouter);
 
-if (process.env.NODE_ENV === 'production') {
+//if (process.env.NODE_ENV === 'production') {
   app.use('/build', express.static(path.join(__dirname, '../build')));
   app.get('/', (req, res) => {
     return res.status(200).sendFile(path.join(__dirname, '../index.html'));
   });
-}
+//}
 // error handlers
 //app.use('*',(req, res) => res.status(404).sendFile(path.join(__dirname, '/client/404.html')));
 
