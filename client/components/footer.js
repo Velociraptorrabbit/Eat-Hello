@@ -48,9 +48,8 @@ const Footer = () => {
               <li>Fort Awesome</li>
               <li>Babel</li>
               <li>axios</li>
-              <li>nodemon</li>
+              <li>Jest Testing</li>
               <li>cors</li>
-              <li>bcrypt</li>
               <li>mongoose</li>
             </ul>
           </div>

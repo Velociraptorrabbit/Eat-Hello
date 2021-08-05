@@ -82,12 +82,12 @@ const Header = ({
               <FontAwesomeIcon icon={faCat} size="2x" />
             </div>
 
-            {/* <div
+            <div
               className="social-Button"
-              onClick={() => togglePopUpHandlerHistory()}
+              onClick={() => togglePopUpHandler("cat")}
             >
               <FontAwesomeIcon icon={faAt} size="2x" />
-            </div> */}
+            </div>
 
             <div
               className="author-Button"

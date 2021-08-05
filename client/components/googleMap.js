@@ -22,8 +22,7 @@ const GoogleMap = ({ menu, zipcode, lat, lng }) => {
     );
     console.log('this is results', result);
     // let item = inputContainer[Math.floor(Math.random()*inputContainer.length)];
-    // let chosenRestaurant = result[Math.floor(Math.random() * result.length)];
-    let chosenRestaurant = result[Math.floor(Math.random() * 5)];
+    const chosenRestaurant = result[Math.floor(Math.random() * result.length)];
     // console.log('this is chosen restaurant', chosenRestaurant);
     setRestaurantLat(chosenRestaurant.geometry.location.lat);
     setRestaurantLng(chosenRestaurant.geometry.location.lng);

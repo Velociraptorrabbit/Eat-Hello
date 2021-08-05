@@ -1,17 +1,17 @@
-import React, { Component, useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
-import FoodOption from './foodOption';
+import React, { Component, useEffect } from "react";
+import { useState } from "react/cjs/react.development";
+import FoodOption from "./foodOption";
 
 const foodOptions = [
-  'Pizza',
-  'Dimsum',
-  'Burgers',
-  'Pasta',
-  'BBQ',
-  'Sushi',
-  'Mexican',
-  'Seafood',
-  'Thai',
+  // "Pizza",
+  // "Dimsum",
+  // "Burgers",
+  // "Pasta",
+  // "BBQ",
+  // "Sushi",
+  // "Mexican",
+  // "Seafood",
+  // "Thai",
 ];
 
 const FoodListMaker = (foodOptions) => {
@@ -21,18 +21,18 @@ const FoodListMaker = (foodOptions) => {
 };
 
 const FoodOptionLists = ({ setMenu, cancelPopup }) => {
-  const [clickAdd, setClickAdd] = useState('');
+  const [clickAdd, setClickAdd] = useState("");
   const [optionArr, setOptionArr] = useState(foodOptions);
-  const input = document.querySelector('.add_menu');
+  const input = document.querySelector(".add_menu");
 
   console.log(clickAdd);
   const addMenuBtn = () => {
-    if (clickAdd !== '') {
+    if (clickAdd !== "") {
       const copyArr = [...optionArr];
       copyArr.push(clickAdd);
       setOptionArr(copyArr);
-      setClickAdd('');
-      input.value = '';
+      setClickAdd("");
+      input.value = "";
       input.focus();
     }
   };
@@ -46,28 +46,28 @@ const FoodOptionLists = ({ setMenu, cancelPopup }) => {
   };
 
   const cancelMenu = () => {
-    setMenu('');
+    setMenu("");
     cancelPopup();
   };
 
   return (
-    <div className='food_option_box'>
-      {/* <ul className='food_option_lists'>{FoodListMaker(optionArr)}</ul> */}
-      <div className='food_input_btns'>
+    <div className="food_option_box">
+      <ul className="food_option_lists">{FoodListMaker(optionArr)}</ul>
+      <div className="food_input_btns">
         <input
-          className='add_menu'
-          type='text'
-          placeholder='add options'
+          className="add_menu"
+          type="text"
+          placeholder="add options"
           onChange={(e) => setClickAdd(e.target.value)}
         />
-        <button className='add_menuBtn' onClick={() => addMenuBtn()}>
-        Step 1:   Add the options
+        <button className="add_menuBtn" onClick={() => addMenuBtn()}>
+          Step 1: Add the options
         </button>
-        <button className='show_menuBtn' onClick={() => showMenu()}>
-        Step 2:   Click here to see what we picked for you!
+        <button className="show_menuBtn" onClick={() => showMenu()}>
+          Step 2: Click here to see what we picked for you!
         </button>
-        <button className='cancel_menuBtn' onClick={() => cancelMenu()}>
-        Cancel
+        <button className="cancel_menuBtn" onClick={() => cancelMenu()}>
+          Cancel
         </button>
       </div>
     </div>
