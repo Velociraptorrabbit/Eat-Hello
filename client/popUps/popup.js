@@ -1,10 +1,12 @@
 import { PromiseProvider } from 'mongoose';
 import React, { Component, Fragment, useEffect } from 'react';
 import velociraptor from '../Images/velociraptor.jpeg';
+import LoginPopup from './loginPopup';
 
 const Popup = ({
   popupState,
   loggedIn,
+  setLoggedIn,
   displayLoginForm,
   loginDisplayToggler,
 }) => {
@@ -17,41 +19,8 @@ const Popup = ({
         </Fragment>
       );
     } //else not logged in
-
-    if (displayLoginForm) {
-      return (
-        <Fragment>
-          <div className='credContainer'>
-            <h2>Credentials</h2>
-            <label className='input'>
-              <input className='input__field' type='text' placeholder=' ' />
-              <span className='input__label'>User Name</span>
-            </label>
-            <label className='input'>
-              <input className='input__field' type='text' placeholder=' ' />
-              <span className='input__label'>Password</span>
-            </label>
-            <div className='button-group'>
-              <button className='submit'>Send</button>
-              <button type='reset' className='submit'>
-                Reset
-              </button>
-            </div>
-          </div>
-        </Fragment>
-      );
-    }
-
-    return (
-      <div className='logInButtonContainer'>
-        <button
-          className='submit signUpButton'
-          onClick={() => loginDisplayToggler()}
-        >
-          Sign up
-        </button>
-        <button className='submit logInButton'>Log In</button>
-      </div>
+    else return (
+      <LoginPopup loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
     );
   };
 
