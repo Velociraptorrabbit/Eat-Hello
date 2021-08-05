@@ -43,11 +43,17 @@
 
 .add_menuBtn {
   margin: 20px 0 10px;
-  width: 185px;
-  height: 35px;
+  width: 250px;
+  height: 50px;
   border-radius: 10px;
   background-color: lighten($Primary, 8%);
   font-size: $font-large;
+  //  margin: 20px 0 10px;
+  // width: 200px;
+  // height: 40px;
+  // border-radius: 10px;
+  // background-color: lighten($Primary, 3%);
+  // font-size: $font-large;
 }
 
 .add_menuBtn:hover {
@@ -59,11 +65,11 @@
 }
 
 .show_menuBtn {
-  width: 185px;
-  height: 35px;
+  width: 250px;
+  height: 80px;
   margin-top: 30px;
   border-radius: 10px;
-  background-color: $Primary;
+  background-color: lighten($Primary, 8%);
   font-size: $font-large;
 }
 
@@ -83,12 +89,15 @@
   background-color: lighten($Primary, 19%);
   border: 3px solid lighten($Primary, 5%);
   font-size: $font-large;
+  color: $Primary;
 }
 
 .cancel_menuBtn:focus {
+  color: lightgrey;
   background-color: darken($Primary, 8%);
 }
 
 .cancel_menuBtn:hover {
+  color: lightgrey;
   background-color: darken($Primary, 8%);
 }

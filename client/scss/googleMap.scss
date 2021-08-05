@@ -1,18 +1,26 @@
 .google_map_area {
-  position: absolute;
-  top: 120px;
-  left: 280px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // position: absolute;
+  // top: 120px;
+  // // left: 280px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   background-color: lighten($Primary, 20%);
+  margin: 0;
+  position: relative;
+  // top: 10%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
-  width: 500px;
-  height: 450px;
+  // width: 500px;
+  // height: 450px;
 }
 .google_map {
   justify-content: center;
   align-items: center;
+  width: 500px;
+  height: 500px;
 }
 #map {
   justify-content: center;

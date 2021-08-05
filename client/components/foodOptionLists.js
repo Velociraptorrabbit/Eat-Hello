@@ -52,7 +52,7 @@ const FoodOptionLists = ({ setMenu, cancelPopup }) => {
 
   return (
     <div className='food_option_box'>
-      <ul className='food_option_lists'>{FoodListMaker(optionArr)}</ul>
+      {/* <ul className='food_option_lists'>{FoodListMaker(optionArr)}</ul> */}
       <div className='food_input_btns'>
         <input
           className='add_menu'
@@ -61,13 +61,13 @@ const FoodOptionLists = ({ setMenu, cancelPopup }) => {
           onChange={(e) => setClickAdd(e.target.value)}
         />
         <button className='add_menuBtn' onClick={() => addMenuBtn()}>
-          Add Option
+        Step 1:   Add the options
         </button>
         <button className='show_menuBtn' onClick={() => showMenu()}>
-          Show me the menu!!
+        Step 2:   Click here to see what we picked for you!
         </button>
         <button className='cancel_menuBtn' onClick={() => cancelMenu()}>
-          Cancel
+        Cancel
         </button>
       </div>
     </div>
