@@ -3,6 +3,7 @@ class GoogleService {
   static async getGoogleMap(url) {
     try {
       let result = await axios.get(url);
+      // console.log(result)
       return result.data;
     } catch (err) {
       console.log(err);
