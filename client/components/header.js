@@ -17,6 +17,7 @@ const {
 
 const Header = ({
   loggedIn,
+  setLoggedIn,
   displayLoginForm,
   menu,
   username,
@@ -45,6 +46,7 @@ const Header = ({
       <Popup
         popupState={popupState}
         loggedIn={loggedIn}
+        setLoggedIn={setLoggedIn}
         displayLoginForm={displayLoginForm}
         loginDisplayToggler={loginDisplayToggler}
       />

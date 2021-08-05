@@ -19,6 +19,7 @@ const MainContainer = () => {
     <div className='main_container'>
       <Header
         loggedIn={loggedIn}
+        setLoggedIn={setLoggedIn}
         displayLoginForm={displayLoginForm}
         loginDisplayToggler={loginDisplayToggler}
         menu={menu}
