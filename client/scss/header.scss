@@ -19,6 +19,9 @@
   display: flex;
   align-items: center;
 }
+.cat-Button {
+  margin-left: 2rem;
+}
 
 .headerBar-Right svg {
   margin-left: 1.25rem;
@@ -69,6 +72,24 @@
 .credContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.textbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 5px;
+  margin: px;
+  width: 150px;
+  height: 30px;
+  border-radius: 20px;
+  line-height: 10px;
+  border: 2px solid $Primary;
+  background-color: rgb(255, 255, 255);
+  color: rgb(3, 3, 3);
 }
 
 .authors {
@@ -87,7 +108,7 @@
 .logInButtonContainer {
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
+  margin-left: 10px;
   margin-bottom: 10px;
   // align-items: center;
   // height: 50px;
@@ -95,7 +116,7 @@
 
 .submit {
   @extend .logInButtonContainer;
-  padding: 10px 30px;
+  padding: 10px 10px;
   font-size: $font-large;
   cursor: pointer;
 

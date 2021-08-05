@@ -1,7 +1,11 @@
 .google_map_area {
   // position: absolute;
   // top: 120px;
+<<<<<<< HEAD
   // left: 280px;
+=======
+  // // left: 280px;
+>>>>>>> caae3eef332c4b932dfd11aa972d0f863114dc26
   // display: flex;
   // justify-content: center;
   // align-items: center;
@@ -13,21 +17,31 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 
+<<<<<<< HEAD
   // width: 500px;
   // height: 450px;
+=======
+  width: 500px;
+  height: 500px;
+>>>>>>> caae3eef332c4b932dfd11aa972d0f863114dc26
 }
 .google_map {
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
+=======
+  top: 15%;
+>>>>>>> caae3eef332c4b932dfd11aa972d0f863114dc26
   width: 500px;
   height: 500px;
 }
 #map {
   justify-content: center;
   align-items: center;
-  width: 450px;
-  height: 450px;
+  width: 500px;
+  height: 500px;
   background-color: white;
+  box-shadow: 0 30px 40px rgba(0, 0, 0, 0.5);
 }
 
 .gMapInner svg {

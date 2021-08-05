@@ -1,36 +1,67 @@
-import { PromiseProvider } from 'mongoose';
-import React, { Component, Fragment, useEffect } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import axios from 'axios';
 
-const LoginPopup = ({ loggedIn }) => {
-  const logInContent = () => {
-    //is user logged in
-  if (loggedIn) {
-    return (
-      <Fragment>
-        <h2>Welcome Back</h2>
-      </Fragment>
-    );
-  } 
-  else return (
+const regeneratorRuntime = require("regenerator-runtime");
+
+const LoginPopup = ({ loggedIn , setLoggedIn }) => {
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+    // may need a few more for page behavior
+  useEffect(() => {
+      console.log(username,password);
+      console.log("isLoggedIn state: ", loggedIn);
+  });
+
+  async function onLoginClick() {
+    await axios.post('/login', {
+        username,
+        password,
+      })
+        .then((res) => {
+            console.log(res)
+            if (res.data === 'success') {
+              setLoggedIn(true); //redirect us
+            }
+            else {
+                // throw component error
+              setLoggedIn(false);
+            }
+        })
+  };
+
+  async function onRegisterClick() {
+    // check agains the data base if this is a valid username / password pair
+    await axios.post('/login/signup', {
+        username,
+        password,
+    })
+    .then ( (res) => {
+        console.log(res)
+        if (res) {
+          console.log('Registration successful')
+        }
+        else {
+          console.log('Registration failed')
+        }
+      })
+    .catch( err => console.log(err));
+};
+
+  return (
     <div className = "loginForm">
       < Fragment>
         <div className='credContainer'>
-          <h2>Credentials</h2>
-            <label className='input'>
-              <input className='input__field' type='text' placeholder=' ' />
-              <span className='input__label'>User Name</span>
-            </label>
-            <label className='input'>
-              <input className='input__field' type='text' placeholder=' ' />
-              <span className='input__label'>Password</span>
-            </label>
-            <div className='button-group'>
-              <button className='submit'>Send</button>
-              <button type='reset' className='submit'>
-                Reset
-              </button>
+          <h2>Account Info</h2>
+            <input type='text' id='username' placeholder={'username'} onChange={e => setUsername(e.target.value)} className='textbox'></input>
+              <div></div>
+            <input type='text' id='password' placeholder={'password'} onChange={e => setPassword(e.target.value)} className='textbox'></input>
+            <div className='button-login'>
+              <button type='reset' className='submit' onClick={onLoginClick}>Login</button>
+              <button type='reset' className='submit' onClick={onRegisterClick}>Signup</button>
             </div>
+
         </div>
       </Fragment>
     </div>
