@@ -35,6 +35,8 @@ const ZipCode = ({ menu, setZipcode, zipcode }) => {
       'http://localhost:3000/map',
       { zipCode: zipcode }
     );
+    
+    // console.log(result)
     setLat(result.latitude);
     setLng(result.longitude);
   };

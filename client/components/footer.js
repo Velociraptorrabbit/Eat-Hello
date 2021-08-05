@@ -7,15 +7,12 @@ const Footer = () => {
   
   return (
     <div className='footerBar'>
-
-      
       <div className='footerFlex'>
         {/* FOOTER ONE */}
         <div className='designDetails'>
-          
           <p>
             <FontAwesomeIcon icon={faCat} size='1x' /> 
-              Designed and build by the <br></br> New York #27 Velocirabbit Team
+            Designed and build by the <br></br> New York #27 Velocirabbit Team
           </p>
           <p>
           Code licensed MIT, docs CC BY 3.0.
