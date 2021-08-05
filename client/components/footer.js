@@ -1,70 +1,68 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component, useEffect, useState } from "react";
 
-const { FontAwesomeIcon } = require('@fortawesome/react-fontawesome');
-const { faCat } = require('@fortawesome/free-solid-svg-icons');
+const { FontAwesomeIcon } = require("@fortawesome/react-fontawesome");
+const { faCat } = require("@fortawesome/free-solid-svg-icons");
 
 const Footer = () => {
-  
   return (
-    <div className='footerBar'>
-      <div className='footerFlex'>
+    <div className="footerBar">
+      <div className="footerFlex">
         {/* FOOTER ONE */}
-        <div className='designDetails'>
+        <div className="designDetails">
           <p>
-            <FontAwesomeIcon icon={faCat} size='1x' /> 
+            <FontAwesomeIcon icon={faCat} size="1x" />
             Designed and build by the <br></br> New York #27 Velocirabbit Team
           </p>
-          <p>
-          Code licensed MIT, docs CC BY 3.0.
-          </p>
+          <p>Code licensed MIT, docs CC BY 3.0.</p>
           <br></br>
-          <p>
-            Currently v0.1.3
-          </p>
+          <p>Currently v0.2.0</p>
         </div>
         {/* FOOTER TWO */}
-        <div className='detailsFlex'>
-
-          <div className='col1'>
-            
+        <div className="detailsFlex">
+          <div className="col1">
             <ul>
-              <li><strong>CodeSmith</strong></li>
+              <li>
+                <strong>CodeSmith</strong>
+              </li>
               <li>New York</li>
               <li>Immersive 27</li>
               <li>Velocirabbit</li>
             </ul>
           </div>
-          <div className='col2'>
+          <div className="col2">
             <ul>
-            <li><strong>Tech</strong></li>
+              <li>
+                <strong>Tech</strong>
+              </li>
               <li>React</li>
               <li>Express</li>
               <li>MongoDB</li>
               <li>Node</li>
             </ul>
           </div>
-          <div className='col3'>
+          <div className="col3">
             <ul>
-            <li><strong>Resources</strong></li>
+              <li>
+                <strong>Resources</strong>
+              </li>
               <li>Fort Awesome</li>
               <li>Babel</li>
               <li>axios</li>
-              <li>nodemon</li>
+              <li>Jest Testing</li>
               <li>cors</li>
-              <li>bcrypt</li>
               <li>mongoose</li>
-            </ul> 
+            </ul>
           </div>
-          <div className='col4'>
+          <div className="col4">
             <ul>
-            <li><strong>APIs</strong></li>
+              <li>
+                <strong>APIs</strong>
+              </li>
               <li>Google Maps</li>
             </ul>
           </div>
         </div>
-      
       </div>
-
     </div>
   );
 };

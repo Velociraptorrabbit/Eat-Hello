@@ -1,7 +1,7 @@
-const express = require('express');
-const { unstable_renderSubtreeIntoContainer } = require('react-dom');
+const express = require("express");
+const { unstable_renderSubtreeIntoContainer } = require("react-dom");
 const router = express.Router();
-const mapController = require('../controllers/mapController');
+const mapController = require("../controllers/mapController");
 
 // router.get('/', mapController.testing, (req, res) => {
 //   //console.log('req.locals.data: ', req.locals.data);
@@ -14,7 +14,7 @@ const mapController = require('../controllers/mapController');
 
 // post('/restaurant')
 
-router.post('/', mapController.getGeoCode, (req, res) => {
+router.post("/", mapController.getGeoCode, (req, res) => {
   //   console.log('finally sending back!!', req.locals);
   return res
     .status(200)
