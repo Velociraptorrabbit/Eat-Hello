@@ -37,7 +37,7 @@
 .add_menu {
   margin-top: 10px;
   width: 250px;
-  height: 30px;
+  height: 80px;
   outline: none;
   border-radius: 10px;
   padding: 5px 10px;
@@ -48,7 +48,7 @@
 .add_menuBtn {
   margin: 20px 0 10px;
   width: 250px;
-  height: 50px;
+  height: 80px;
   border-radius: 10px;
   background-color: lighten($Primary, 10%);
   font-size: $font-large;
@@ -65,7 +65,7 @@
 .del_menuBtn {
   margin: 20px 0 10px;
   width: 250px;
-  height: 50px;
+  height: 80px;
   border-radius: 10px;
   background-color: lighten($Primary, 10%);
   font-size: $font-large;
@@ -98,7 +98,7 @@
 
 .cancel_menuBtn {
   width: 250px;
-  height: 35px;
+  height: 80px;
   margin-top: 20px;
   border-radius: 10px;
   background-color: lighten($Primary, 19%);
@@ -120,7 +120,7 @@
 #curator {
   margin-top: 10px;
   width: 250px;
-  height: 30px;
+  height: 80px;
   outline: none;
   border-radius: 10px;
   padding: 5px 10px;

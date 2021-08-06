@@ -39,12 +39,13 @@
   border-left: 2px solid $Primary;
   border-bottom: 2px solid $Primary;
   border-right: 2px solid $Primary;
-  border-bottom-left-radius: 0.25rem;
+  border-radius: 0.60rem;
   position: absolute;
   height: 200px;
   width: 250px;
   margin-top: 45px;
   top: 50px;
+  box-shadow: 0 30px 40px rgba(156, 155, 155, 0.5);
 }
 
 .popUp {

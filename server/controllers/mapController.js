@@ -22,6 +22,9 @@ const apiKey = "AIzaSyDpYRJVFI4aIRS5LLZpKkuOIGcJkkyrGVI";
 mapController.getGeoCode = async (req, res, next) => {
   try {
     const zipCode = req.body.zipCode;
+    if (typeof zipCode !== "number") {
+      return res.status(400).send("Not A Zipcode!");
+    }
     const zipUrl = `https://maps.googleapis.com/maps/api/geocode/json?components=postal_code:${zipCode}&key=${apiKey} `;
     const response = await axios.get(zipUrl);
     // res.locals = {
