@@ -19,6 +19,9 @@
   display: flex;
   align-items: center;
 }
+.cat-Button {
+  margin-left: 2rem;
+}
 
 .headerBar-Right svg {
   margin-left: 1.25rem;
@@ -36,18 +39,19 @@
   border-left: 2px solid $Primary;
   border-bottom: 2px solid $Primary;
   border-right: 2px solid $Primary;
-  border-bottom-left-radius: 0.25rem;
+  border-radius: 0.60rem;
   position: absolute;
   height: 200px;
   width: 250px;
   margin-top: 45px;
   top: 50px;
+  box-shadow: 0 30px 40px rgba(156, 155, 155, 0.5);
 }
 
 .popUp {
   position: fixed;
 
-  //transform: translateX(100%);
+  // transform: translateX(100%);
   transition: 0.3s ease-out;
 }
 
@@ -56,7 +60,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-wrap: initial;
+  // overflow-wrap: initial;
+  overflow: hidden;
+  margin: auto;
 }
 
 .popUpBody img {
@@ -67,13 +73,44 @@
 .credContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.textbox {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // padding-left: 5px;
+  // margin: px;
+  // width: 150px;
+  // height: 30px;
+  // border-radius: 20px;
+  // line-height: 10px;
+  // border: 2px solid $Primary;
+  // background-color: rgb(255, 255, 255);
+  // color: rgb(3, 3, 3);
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  width: 150px;
+  height: 30px;
+  outline: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: 2px solid darken($Primary, 10%);
+  font-size: $font-medium;
 }
 
 .authors {
   display: flex;
   flex-direction: column;
   font-weight: bold;
-  margin-left: 50px;
+  // margin-left: 50px;
   font-size: $font-large;
   color: darken($Primary, 60%);
 }
@@ -85,15 +122,16 @@
 .logInButtonContainer {
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
+  margin-left: 10px;
   margin-bottom: 10px;
   // align-items: center;
   // height: 50px;
+  color: darken($Primary, 60%);
 }
 
 .submit {
   @extend .logInButtonContainer;
-  padding: 10px 30px;
+  padding: 10px 10px;
   font-size: $font-large;
   cursor: pointer;
 
@@ -101,18 +139,18 @@
   border-bottom-left-radius: 0;
 
   background-color: $Primary;
-  color: $Accent2;
+  color: darken($Primary, 60%);
 
   transition: all 0.3s;
   margin-top: 1rem;
-  &:hover {
-    border-radius: 0px;
+  // &:hover {
+  //   border-radius: 0px;
 
-    color: $font-color;
-    background-color: $Accent2;
-    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffacac' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    animation: animatedBackground 5s linear infinite alternate;
-  }
+  //   color: $font-color;
+  //   background-color: $Accent2;
+  //   background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffacac' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  //   animation: animatedBackground 5s linear infinite alternate;
+  // }
 }
 
 @keyframes animatedBackground {

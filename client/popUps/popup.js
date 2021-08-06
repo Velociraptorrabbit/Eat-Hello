@@ -1,10 +1,12 @@
 import { PromiseProvider } from 'mongoose';
 import React, { Component, Fragment, useEffect } from 'react';
-import goblinShark from '../Images/goboshark.png';
+import velociraptor from '../Images/velociraptor.jpeg';
+import LoginPopup from './loginPopup';
 
 const Popup = ({
   popupState,
   loggedIn,
+  setLoggedIn,
   displayLoginForm,
   loginDisplayToggler,
 }) => {
@@ -17,48 +19,15 @@ const Popup = ({
         </Fragment>
       );
     } //else not logged in
-
-    if (displayLoginForm) {
-      return (
-        <Fragment>
-          <div className='credContainer'>
-            <h2>Credentials</h2>
-            <label className='input'>
-              <input className='input__field' type='text' placeholder=' ' />
-              <span className='input__label'>User Name</span>
-            </label>
-            <label className='input'>
-              <input className='input__field' type='text' placeholder=' ' />
-              <span className='input__label'>Password</span>
-            </label>
-            <div className='button-group'>
-              <button className='submit'>Send</button>
-              <button type='reset' className='submit'>
-                Reset
-              </button>
-            </div>
-          </div>
-        </Fragment>
-      );
-    }
-
-    return (
-      <div className='logInButtonContainer'>
-        <button
-          className='submit signUpButton'
-          onClick={() => loginDisplayToggler()}
-        >
-          Sign up
-        </button>
-        <button className='submit logInButton'>Log In</button>
-      </div>
+    else return (
+      <LoginPopup loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
     );
   };
 
   const catContent = () => {
     return (
       <Fragment>
-        <img src={goblinShark} alt='goblin-shark' />
+        <img src={velociraptor} alt='velociraptor' />
       </Fragment>
     );
   };
@@ -66,10 +35,9 @@ const Popup = ({
   const authorContent = () => {
     return (
       <ul className='authors'>
-        <li>Adda Kridler</li>
-        <li>Annie Pan</li>
-        <li>Emeric David</li>
-        <li>Hazel Na</li>
+        <li>Jae Kim</li>
+        <li>Shawn Convery</li>
+        <li>Simon Yu</li>
         <li>Matilda Wang</li>
       </ul>
     );
